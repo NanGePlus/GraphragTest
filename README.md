@@ -63,13 +63,13 @@ http://139.22.52.238:3000/
 官网直接下载安装即可     
 
 ## 1.2 安装项目依赖
+GitHub中下载工程文件到本地，下载地址如下：     
+https://github.com/NanGePlus/GraphragTest       
+
 pip install -r requirements.txt    
 **注意:** 本教程graphrag版本选择0.3.0
 
 # 2、构建graphrag
-GitHub中下载工程文件到本地，下载地址如下：    
-https://github.com/NanGePlus/GraphragTest      
-
 ## 2.1 创建graphrag所需文件夹
 首先在当前项目下创建个文件夹，**注意:** 这里的ragtest文件夹为自定义文件夹，下面所有操作均在该文件夹目录下进行操作     
 mkdir -p ./ragtest       
