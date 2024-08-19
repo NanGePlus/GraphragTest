@@ -111,6 +111,19 @@ description_embedding_store = LanceDBVectorStore(collection_name="entity_descrip
 main.py脚本运行成功后，新开一个终端命令行，运行apiTest.py进行测试        
 **注意:** 根据需求修改messages中的query的问题       
 
+**测试结论:** 根据各自情况的不同，tokens数量和金额可能会有出入，但相差不会太大           
+基础测试数据：西游记白话文前九回，共计19485字，千问测算15743tokens              
+阿里云百炼：https://bailian.console.aliyun.com/#/data-analysis           
+（1）构建索引使用的LLM模型是qwen-turbo模型、Embedding模型是text-embedding-v1(费用忽略不计)                  
+**共调用LLM次数：284次，共消耗575086tokens，共消费1.421元，共耗时5-10mīn**，拆解如下：            
+输入417476tokens，消费0.835元           
+输出97640tokens，消费0.586元          
+（2）测试搜索使用的LLM模型是qwen-plus模型、Embedding模型是text-embedding-v1(费用忽略不计)           
+**共测试3次(共计2次本地搜索、2次全局搜索)，调用LLM次数：20次，共消耗61440tokens，共消费0.272元**，拆解如下：           
+输入58084tokens，消费0.232元             
+输出3356tokens，消费0.040元               
+（3）结论，通过上面的计算，整个测试共消费1.693元，我的订单页则显示消费1.69元    
+
 ## 3.3 知识图谱使用neoo4j图数据库进行可视化
 首先需要进入neo4j数据库网站，使用云服务版本，这里直接打开neo4j平台，注册成功后创建实例即可       
 https://workspace-preview.neo4j.io/workspace/query    
