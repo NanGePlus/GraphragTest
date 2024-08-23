@@ -1,3 +1,12 @@
+# 0、相关视频教程       
+（1）基础开发环境搭建               
+https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949            
+ (2)GraphRAG+阿里云通义千问大模型                                    
+https://www.bilibili.com/video/BV1aKWTexEeH/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                             
+（2）GraphRAG+gpt-4o-mini大模型                         
+https://www.bilibili.com/video/BV1zkWse9Enb/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                       
+（3）GraphRAG+智谱AI大模型glm-4                   
+
 # 1、准备工作
 ## 1.1 graphrag基础概念
 ### （1）定义
