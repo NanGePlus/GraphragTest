@@ -51,80 +51,106 @@ python -m graphrag.prompt_tune --config ./settings.yaml --root ./ --no-entity-ty
 将知识图谱中的结构化数据与输入文档中的非结构化数据相结合，生成与特定实体相关的候选问题       
 
 ## 1.2 oneapi安装和部署    
-这里直接使用官方的release版本的软件包，直接进行运行，详情参考如下链接中的手动部署：      
-https://github.com/songquanpeng/one-api      
-这里以ubuntu22.04系统举例：下载one-api可执行文件，将one-api文件上传到服务器中然后，执行如下命令后台运行         
-nohup ./one-api --port 3000 --log-dir ./logs > output.log 2>&1 &
-运行成功后，浏览器打开如下地址进入one-api页面        
-http://139.22.52.238:3000/         
-进入one-api后，先使用root 123456登陆，登陆后首先创建渠道（通义千问），再创建令牌即可               
+### （1）OneAPI是什么
+官方介绍：是OpenAI接口的管理、分发系统       
+支持 Azure、Anthropic Claude、Google PaLM 2 & Gemini、智谱 ChatGLM、百度文心一言、讯飞星火认知、阿里通义千问、360 智脑以及腾讯混元     
+### (2)安装、部署  
+使用官方提供的release软件包进行安装部署 ，详情参考如下链接中的手动部署：         
+https://github.com/songquanpeng/one-api          
+下载OneAPI可执行文件one-api并上传到服务器中然后，执行如下命令后台运行                
+nohup ./one-api --port 3000 --log-dir ./logs > output.log 2>&1 &                 
+运行成功后，浏览器打开如下地址进入one-api页面，默认账号密码为：root 123456               
+http://IP:3000/           
+### (3)创建渠道和令牌       
+创建渠道：大模型类型(通义千问)、APIKey(通义千问申请的真实有效的APIKey)             
+创建令牌：创建OneAPI的APIKey，后续代码中直接调用此APIKey                       
 
-## 1.3 anaconda、pycharm 安装   
-官网直接下载安装即可     
+## 1.3 openai使用方案
+国内无法直接访问，可以使用代理的方式，具体代理方案自己选择               
+可以参考这个视频《GraphRAG最新版本0.3.0对比实战评测-使用gpt-4o-mini和qwen-plus分别构建近2万字文本知识索引+本地/全局检索对比测试》中推荐的方式：               
+https://www.bilibili.com/video/BV1zkWse9Enb/?vd_source=30acb5331e4f5739ebbad50f7cc6b949             
 
-## 1.2 安装项目依赖
-GitHub中下载工程文件到本地，下载地址如下：     
+## 1.4 anaconda、pycharm 安装       
+anaconda:提供python虚拟环境，官网下载对应系统版本的安装包安装即可              
+pycharm:提供集成开发环境，官网下载社区版本安装包安装即可              
+
+
+# 2、构建graphrag  
+## 2.1 下载源码   
+GitHub中下载工程文件到本地，下载地址如下：          
 https://github.com/NanGePlus/GraphragTest       
 
-pip install -r requirements.txt    
-**注意:** 本教程graphrag版本选择0.3.0
+## 2.2 构建项目  
+ 使用pycharm构建一个项目，为项目配置虚拟python环境         
+项目名称：GraphragTest          
 
-# 2、构建graphrag
-## 2.1 创建graphrag所需文件夹
-首先在当前项目下创建个文件夹，**注意:** 这里的ragtest文件夹为自定义文件夹，下面所有操作均在该文件夹目录下进行操作     
-mkdir -p ./ragtest       
+## 2.3 将相关代码拷贝到项目工程中            
+直接将下载的文件夹中的文件拷贝到新建的项目目录中           
+
+## 2.4 安装项目依赖        
+pip install -r requirements.txt              
+每个软件包后面都指定了本次视频测试中固定的版本号        
+**注意:** 本视频使用是截止现在最新graphrag版本0.3.0            
+
+## 2.5 创建graphrag所需文件夹          
+在当前项目下创建个文件夹，**注意:** 这里的ragtest文件夹为自定义文件夹，下面所有操作均在该文件夹目录下进行操作         
+mkdir -p ./ragtest          
 cd ragtest     
 mkdir -p ./input         
 mkdir -p ./inputs         
 mkdir -p ./cache        
 
-## 2.2 准备测试文档
+## 2.6 准备测试文档
 **注意:** 这里以西游记白话文前九回内容为例，将other/text/下的1-9.txt文件直接放入ragtest/input文件夹下       
 
-## 2.3 初始化   
+## 2.7 初始化   
 python -m graphrag.index --init  --root ./        
 
-## 2.4 设置参数
+## 2.8 设置参数
 设置.env和settings.yaml       
-**注意:** 具体参考提供的other/temp下的.env和settings.yaml文件内容                  
+**注意1:** 针对阿里通义千问大模型具体参考提供的other/temp下的.env和settings.yaml文件内容，直接拷贝即可      
+**注意2:** 针对智谱大模型本身的参数限制，将other/temp下的.env和settings.yaml文件内容拷贝后，需要对settings.yaml文件做如下修改          
+llm:              
+  temperature: 0.95 # temperature for sampling                
+  top_p: 0.7 # top-p sampling                        
+embeddings:                
+  batch_size: 1 # the number of documents to send in a single request                       
+  batch_max_tokens: 8000 # the maximum number of tokens to send in a single request                            
 
-## 2.5 优化提示词，选择一条适合的运行即可
-python -m graphrag.prompt_tune --config ./settings.yaml --root ./ --no-entity-types --language Chinese --output ./prompts    
+## 2.9 优化提示词，选择一条适合的运行即可      
+python -m graphrag.prompt_tune --config ./settings.yaml --root ./ --no-entity-types --language Chinese --output ./prompts             
 
-## 2.6 构建索引
-python -m graphrag.index --root ./       
+## 2.10 构建索引     
+python -m graphrag.index --root ./             
 
 
 # 3、测试graphrag     
-测试代码在utils文件夹，将other/utils文件夹直接拷贝到ragtest文件夹下
-## 3.1 运行main.py脚本
-**注意1:** 需要将代码中的如下代码中的文件路径，替换为你的对应工程的文件路径    
-INPUT_DIR = "/Users/janetjiang/Desktop/agi_code/GraphragTest/ragtest/inputs/artifacts" 
-
-**注意2:** 指定向量数据库的集合名称entity_description_embeddings，根据实际情况自定义调整   
+测试代码在utils文件夹，将other/utils文件夹直接拷贝到ragtest文件夹下             
+## 3.1 运行main.py脚本   
+**注意1:** 需要将代码中的如下代码中的文件路径，替换为你的对应工程的文件路径                  
+INPUT_DIR = "/Users/janetjiang/Desktop/agi_code/GraphragTest/ragtest/inputs/artifacts"             
+**注意2:** 大模型配置           
+**注意3:** 指定向量数据库的集合名称entity_description_embeddings，根据实际情况自定义调整                             
 description_embedding_store = LanceDBVectorStore(collection_name="entity_description_embeddings")
 
-**注意3:** 大模型配置     
-
-
 ## 3.2 运行apiTest.py进行测试
-main.py脚本运行成功后，新开一个终端命令行，运行apiTest.py进行测试        
-**注意:** 根据需求修改messages中的query的问题       
+main.py脚本运行成功后，新开一个终端命令行，运行apiTest.py进行测试           
+**注意:** 根据需求修改messages中的query的问题      
 
-**测试结论:** 根据各自情况的不同，tokens数量和金额可能会有出入，但相差不会太大           
-基础测试数据：西游记白话文前九回，共计19485字，千问测算15743tokens              
-阿里云百炼：https://bailian.console.aliyun.com/#/data-analysis           
-（1）构建索引使用的LLM模型是qwen-turbo模型、Embedding模型是text-embedding-v1(费用忽略不计)                  
-**共调用LLM次数：284次，共消耗575086tokens，共消费1.421元，共耗时5-10mīn**，拆解如下：            
-输入417476tokens，消费0.835元           
-输出97640tokens，消费0.586元          
-（2）测试搜索使用的LLM模型是qwen-plus模型、Embedding模型是text-embedding-v1(费用忽略不计)           
-**共测试3次(共计2次本地搜索、2次全局搜索)，调用LLM次数：20次，共消耗61440tokens，共消费0.272元**，拆解如下：           
-输入58084tokens，消费0.232元             
-输出3356tokens，消费0.040元               
-（3）结论，通过上面的计算，整个测试共消费1.693元，我的订单页则显示消费1.69元    
+**通义千问测试结论仅供参考:** 根据各自情况的不同，tokens数量和金额可能会有出入，但相差不会太大        
+基础测试数据：西游记白话文前九回，共计19485字，千问测算15743tokens           
+阿里云百炼：https://bailian.console.aliyun.com/#/data-analysis          
+（1）构建索引使用的LLM模型是qwen-turbo模型、Embedding模型是text-embedding-v1(费用忽略不计)                 
+**共调用LLM次数：284次，共消耗575086tokens，共消费1.421元，共耗时5-10mīn**，拆解如下：           
+输入417476tokens，消费0.835元          
+输出97640tokens，消费0.586元         
+（2）测试搜索使用的LLM模型是qwen-plus模型、Embedding模型是text-embedding-v1(费用忽略不计)          
+**共测试3次(共计2次本地搜索、2次全局搜索)，调用LLM次数：20次，共消耗61440tokens，共消费0.272元**，拆解如下：          
+输入58084tokens，消费0.232元            
+输出3356tokens，消费0.040元              
+（3）结论，通过上面的计算，整个测试共消费1.693元，我的订单页则显示消费1.69元           
 
-## 3.3 知识图谱使用neoo4j图数据库进行可视化
+## 3.3 知识图谱使用neo4j图数据库进行可视化
 首先需要进入neo4j数据库网站，使用云服务版本，这里直接打开neo4j平台，注册成功后创建实例即可       
 https://workspace-preview.neo4j.io/workspace/query    
 **注意1:** 需要将代码中的如下代码中的文件路径，替换为你的对应工程的文件路径,然后运行utils文件下的neoo4jTest.py脚本              
