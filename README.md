@@ -72,7 +72,9 @@ https://www.bilibili.com/video/BV1zkWse9Enb/?vd_source=30acb5331e4f5739ebbad50f7
 
 ## 1.4 anaconda、pycharm 安装       
 anaconda:提供python虚拟环境，官网下载对应系统版本的安装包安装即可              
-pycharm:提供集成开发环境，官网下载社区版本安装包安装即可              
+pycharm:提供集成开发环境，官网下载社区版本安装包安装即可    
+可参考如下视频进行安装：     
+https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949        
 
 
 # 2、构建graphrag  
