@@ -6,7 +6,9 @@ https://www.bilibili.com/video/BV1aKWTexEeH/?vd_source=30acb5331e4f5739ebbad50f7
 (3)GraphRAG+gpt-4o-mini大模型                          
 https://www.bilibili.com/video/BV1zkWse9Enb/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                              
 (4)GraphRAG+智谱AI大模型glm-4                
-https://www.bilibili.com/video/BV1HmWQeKEQB/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                 
+https://www.bilibili.com/video/BV1HmWQeKEQB/?vd_source=30acb5331e4f5739ebbad50f7cc6b949         
+(5)GraphRAG+讯飞星火大模型SparkDesk-v4                 
+https://www.bilibili.com/video/BV1VzsFeCE3g/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                   
 
 # 1、准备工作
 ## 1.1 graphrag基础概念
