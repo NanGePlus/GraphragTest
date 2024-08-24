@@ -128,10 +128,14 @@ llm:
 embeddings:                
   batch_size: 1 # the number of documents to send in a single request                       
   batch_max_tokens: 8000 # the maximum number of tokens to send in a single request        
-**注意3:** 针对百度文心千帆大模型本身的参数限制，将other/temp下的.env和settings.yaml文件内容拷贝后，需要对settings.yaml文件做如下修改           
-llm:               
-  temperature: 0.95 # temperature for sampling                  
-  top_p: 0.7 # top-p sampling     
+**注意3:** 针对讯飞星火大模型本身的参数限制，将other/temp下的.env和settings.yaml文件内容拷贝后         
+需要对settings.yaml文件做如下修改：                  
+llm:              
+  temperature: 0.5 # temperature for sampling                     
+  top_p: 1 # top-p sampling                  
+需要对.env文件做如下调整：          
+GRAPHRAG_CHAT_MODEL=SparkDesk-v4.0（使用讯飞的chat模型）             
+GRAPHRAG_EMBEDDING_MODEL=text-embedding-v1（使用阿里通义千问的embedding模型）   
 
 ## 2.9 优化提示词，选择一条适合的运行即可      
 python -m graphrag.prompt_tune --config ./settings.yaml --root ./ --no-entity-types --language Chinese --output ./prompts             
