@@ -127,7 +127,11 @@ llm:
   top_p: 0.7 # top-p sampling                        
 embeddings:                
   batch_size: 1 # the number of documents to send in a single request                       
-  batch_max_tokens: 8000 # the maximum number of tokens to send in a single request                            
+  batch_max_tokens: 8000 # the maximum number of tokens to send in a single request        
+**注意3:** 针对百度文心千帆大模型本身的参数限制，将other/temp下的.env和settings.yaml文件内容拷贝后，需要对settings.yaml文件做如下修改           
+llm:               
+  temperature: 0.95 # temperature for sampling                  
+  top_p: 0.7 # top-p sampling     
 
 ## 2.9 优化提示词，选择一条适合的运行即可      
 python -m graphrag.prompt_tune --config ./settings.yaml --root ./ --no-entity-types --language Chinese --output ./prompts             
