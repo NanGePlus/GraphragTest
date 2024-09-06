@@ -93,14 +93,17 @@ http://IP:3000/
 
 ## 1.3 openai使用方案
 国内无法直接访问，可以使用代理的方式，具体代理方案自己选择               
-可以参考这个视频《GraphRAG最新版本0.3.0对比实战评测-使用gpt-4o-mini和qwen-plus分别构建近2万字文本知识索引+本地/全局检索对比测试》中推荐的方式：               
-https://www.bilibili.com/video/BV1zkWse9Enb/?vd_source=30acb5331e4f5739ebbad50f7cc6b949             
+可以参考这期视频:                
+【GraphRAG最新版本0.3.0对比实战评测】使用gpt-4o-mini和qwen-plus分别构建近2万字文本知识索引+本地/全局检索对比测试                                        
+https://www.bilibili.com/video/BV1maHxeYEB1/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                                        
+https://youtu.be/iXfsJrXCEwA                        
 
 ## 1.4 anaconda、pycharm 安装       
 anaconda:提供python虚拟环境，官网下载对应系统版本的安装包安装即可              
 pycharm:提供集成开发环境，官网下载社区版本安装包安装即可    
-可参考如下视频进行安装：     
-https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949        
+可参考如下视频进行安装，基础开发环境搭建                                                    
+https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                                     
+https://youtu.be/myVgyitFzrA                 
 
 
 # 2、构建graphrag  
