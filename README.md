@@ -159,18 +159,17 @@ GRAPHRAG_EMBEDDING_MODEL=text-embedding-v1（使用阿里通义千问的embeddin
 **注意4:** 使用本地大模型(Ollama方案)                                         
 Ollama是一个轻量级、跨平台的工具和库，专门为本地大语言模型(LLM)的部署和运行提供支持                        
 它旨在简化在本地环境中运行大模型的过程，不需要依赖云服务或外部API，使用户能够更好地掌控和使用大型模型                           
-(1)安装Ollama，进入官网https://ollama.com/下载对应系统版本直接安装即可  
-windows:3060以上显卡+8G以上显存+16G内存，硬盘空间至少20G                       
-Mac:M1或M2芯片16G内存，20G以上硬盘空间          
-(2)启动Ollama，安装所需要使用的本地模型，执行指令进行安装即可:             
+(1)安装Ollama，进入官网https://ollama.com/下载对应系统版本直接安装即可          
+(2)启动Ollama，安装所需要使用的本地模型，执行指令进行安装即可:       
+ollama pull qwen2:latest          
 ollama pull llama3.1:latest               
 ollama pull nomic-embed-text:latest      
 本次使用的模型如下:               
-chat模型:llama3.1:latest(也就是llama3.1:8b)，对应版本有8b、70b、405b等，8b至少需要8GB的显存、70b至少需要70-75GB的显存、705b至少需要700-750GB的显存                                     
+chat模型:qwen2:latest(7b),对应版本有0.5b、1.5b、7b、72b;llama3.1:latest(也就是llama3.1:8b)，对应版本有8b、70b、405b等                                  
 embedding模型:nomic-embed-text:latest(也就是1.5版本)           
 (3)将other/temp下的.env和settings.yaml文件内容拷贝后,需要对.env文件做如下调整：               
-GRAPHRAG_CHAT_MODEL=llama3.1:latest                                 
-GRAPHRAG_EMBEDDING_MODEL=nomic-embed-text:latest                   
+GRAPHRAG_CHAT_MODEL=qwen2:latest                                 
+GRAPHRAG_EMBEDDING_MODEL=nomic-embed-text:latest                               
 
 ## 2.9 优化提示词，选择一条适合的运行即可      
 python -m graphrag.prompt_tune --config ./settings.yaml --root ./ --no-entity-types --language Chinese --output ./prompts             
