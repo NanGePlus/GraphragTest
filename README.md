@@ -108,8 +108,9 @@ https://youtu.be/myVgyitFzrA
 
 # 2、构建graphrag  
 ## 2.1 下载源码   
-GitHub中下载工程文件到本地，下载地址如下：          
-https://github.com/NanGePlus/GraphragTest       
+下载工程文件到本地，下载地址如下：                    
+https://github.com/NanGePlus/GraphragTest                 
+https://gitee.com/NanGePlus/GraphragTest                                 
 
 ## 2.2 构建项目  
  使用pycharm构建一个项目，为项目配置虚拟python环境         
