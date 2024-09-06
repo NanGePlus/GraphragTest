@@ -21,7 +21,11 @@ https://youtu.be/0l4OYQ81GEo
 
 (5)【GraphRAG+讯飞星火大模型】构建+检索全流程实操，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                                  
 https://www.bilibili.com/video/BV17QHxeSEjy/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                     
-https://youtu.be/42oQAp2Gf1g                       
+https://youtu.be/42oQAp2Gf1g          
+
+(6)【GraphRAG+Ollama】本地开源大模型llama3.1与qwen2构建+检索全流程实操对比评测，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                   
+https://www.bilibili.com/video/BV1mpH9eVES1/?vd_source=30acb5331e4f5739ebbad50f7cc6b949            
+https://youtu.be/AHKtlb9jOpk                         
 
 
 # 1、准备工作
