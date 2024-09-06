@@ -1,14 +1,28 @@
 # 0、相关视频教程       
-(1)基础开发环境搭建               
-https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949             
-(2)GraphRAG+阿里云通义千问大模型                                    
-https://www.bilibili.com/video/BV1aKWTexEeH/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                                     
-(3)GraphRAG+gpt-4o-mini大模型                          
-https://www.bilibili.com/video/BV1zkWse9Enb/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                              
-(4)GraphRAG+智谱AI大模型glm-4                
-https://www.bilibili.com/video/BV1HmWQeKEQB/?vd_source=30acb5331e4f5739ebbad50f7cc6b949         
-(5)GraphRAG+讯飞星火大模型SparkDesk-v4                 
-https://www.bilibili.com/video/BV1VzsFeCE3g/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                   
+(1)基础开发环境搭建                   
+https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                  
+https://youtu.be/myVgyitFzrA             
+
+(2)【GraphRAG+阿里通义千问大模型】构建+检索全流程实操，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                                            
+https://www.bilibili.com/video/BV1yzHxeZEG5/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                               
+https://youtu.be/w9CRDbafhPI                                      
+
+(3)【GraphRAG+知识图谱可视化】知识图谱neo4j可视化呈现，构建近2万字文本知识图谱，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                    
+https://www.bilibili.com/video/BV1prHxe4E9J/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                   
+https://youtu.be/IqE-FP3YLj4                     
+
+(4)【GraphRAG最新版本0.3.0对比实战评测】使用gpt-4o-mini和qwen-plus分别构建近2万字文本知识索引+本地/全局检索对比测试                    
+https://www.bilibili.com/video/BV1maHxeYEB1/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                    
+https://youtu.be/iXfsJrXCEwA                      
+
+(4)【GraphRAG+智谱AI大模型】构建+检索全流程实操，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                                  
+https://www.bilibili.com/video/BV11vHxehEiU/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                   
+https://youtu.be/0l4OYQ81GEo                
+
+(5)【GraphRAG+讯飞星火大模型】构建+检索全流程实操，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                                  
+https://www.bilibili.com/video/BV17QHxeSEjy/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                     
+https://youtu.be/42oQAp2Gf1g                       
+
 
 # 1、准备工作
 ## 1.1 graphrag基础概念
