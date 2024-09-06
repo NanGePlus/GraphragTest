@@ -1,7 +1,7 @@
 # 0、相关视频教程       
-(1)基础开发环境搭建                   
-https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                  
-https://youtu.be/myVgyitFzrA             
+(1)【大模型应用开发基础】集成开发环境搭建Anaconda+PyCharm                                                     
+https://www.bilibili.com/video/BV1q9HxeEEtT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                                      
+https://youtu.be/myVgyitFzrA                   
 
 (2)【GraphRAG+阿里通义千问大模型】构建+检索全流程实操，打造基于知识图谱的本地知识库，本地搜索、全局搜索二合一                                            
 https://www.bilibili.com/video/BV1yzHxeZEG5/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                               
@@ -101,9 +101,9 @@ https://youtu.be/iXfsJrXCEwA
 ## 1.4 anaconda、pycharm 安装       
 anaconda:提供python虚拟环境，官网下载对应系统版本的安装包安装即可              
 pycharm:提供集成开发环境，官网下载社区版本安装包安装即可    
-可参考如下视频进行安装，基础开发环境搭建                                                    
-https://www.bilibili.com/video/BV1tQWje1ErT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                                     
-https://youtu.be/myVgyitFzrA                 
+可参考如下视频进行安装，【大模型应用开发基础】集成开发环境搭建Anaconda+PyCharm                                                     
+https://www.bilibili.com/video/BV1q9HxeEEtT/?vd_source=30acb5331e4f5739ebbad50f7cc6b949                                      
+https://youtu.be/myVgyitFzrA               
 
 
 # 2、构建graphrag  
