@@ -121,7 +121,7 @@ async def setup_llm_and_embedder():
         # model="qwen-plus",  # 本次使用的模型
         # api_type=OpenaiApiType.OpenAI,
 
-        # 调用其他模型  通过Ollama
+        # 调用本地大模型  通过Ollama
         api_base="http://localhost:11434/v1",  # 请求的API服务地址
         api_key="ollama",  # API Key
         model="llama3.1:latest",  # 本次使用的模型
@@ -149,7 +149,7 @@ async def setup_llm_and_embedder():
         # api_type=OpenaiApiType.OpenAI,
         # max_retries=20,
 
-        # 调用其他模型  通过Ollama
+        # 调用本地大模型  通过Ollama
         api_base="http://localhost:11434/v1",  # 请求的API服务地址
         api_key="ollama",  # API Key
         model="nomic-embed-text:latest",
