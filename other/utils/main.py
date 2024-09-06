@@ -115,10 +115,16 @@ async def setup_llm_and_embedder():
         # model="gpt-4o-mini",  # 本次使用的模型
         # api_type=OpenaiApiType.OpenAI,
 
-        # 调用其他模型  通过oneAPI
-        api_base="http://139.224.72.218:3000/v1",  # 请求的API服务地址
-        api_key="sk-KtEtYw4jOGtSpr4n2e06Ee978690452183Be8a1fF75cA8C5",  # API Key
-        model="qwen-plus",  # 本次使用的模型
+        # # 调用其他模型  通过oneAPI
+        # api_base="http://139.224.72.218:3000/v1",  # 请求的API服务地址
+        # api_key="sk-KtEtYw4jOGtSpr4n2e06Ee978690452183Be8a1fF75cA8C5",  # API Key
+        # model="qwen-plus",  # 本次使用的模型
+        # api_type=OpenaiApiType.OpenAI,
+
+        # 调用其他模型  通过Ollama
+        api_base="http://localhost:11434/v1",  # 请求的API服务地址
+        api_key="ollama",  # API Key
+        model="llama3.1:latest",  # 本次使用的模型
         api_type=OpenaiApiType.OpenAI,
     )
 
@@ -135,13 +141,22 @@ async def setup_llm_and_embedder():
         # api_type=OpenaiApiType.OpenAI,
         # max_retries=20,
 
-        # 调用其他模型  通过oneAPI
-        api_base="http://139.224.72.218:3000/v1",  # 请求的API服务地址
-        api_key="sk-KtEtYw4jOGtSpr4n2e06Ee978690452183Be8a1fF75cA8C5",  # API Key
-        model="text-embedding-v1",
-        deployment_name="text-embedding-v1",
+        # # 调用其他模型  通过oneAPI
+        # api_base="http://139.224.72.218:3000/v1",  # 请求的API服务地址
+        # api_key="sk-KtEtYw4jOGtSpr4n2e06Ee978690452183Be8a1fF75cA8C5",  # API Key
+        # model="text-embedding-v1",
+        # deployment_name="text-embedding-v1",
+        # api_type=OpenaiApiType.OpenAI,
+        # max_retries=20,
+
+        # 调用其他模型  通过Ollama
+        api_base="http://localhost:11434/v1",  # 请求的API服务地址
+        api_key="ollama",  # API Key
+        model="nomic-embed-text:latest",
+        deployment_name="nomic-embed-text:latest",
         api_type=OpenaiApiType.OpenAI,
         max_retries=20,
+        
     )
 
     logger.info("LLM和嵌入器设置完成")
