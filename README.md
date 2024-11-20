@@ -27,6 +27,11 @@ https://youtu.be/42oQAp2Gf1g
 https://www.bilibili.com/video/BV1mpH9eVES1/?vd_source=30acb5331e4f5739ebbad50f7cc6b949              
 https://youtu.be/thNMan45lWA                  
 
+(7)(2024.11.5) GraphRAG 发布了 0.4.0版本，该版本的代码经过一轮重构后，已于之前的代码结构有了很大的不同             
+该版本引入了增量更新索引和DRIFT图推理搜索查询(一种混合本地与全局的搜索的方法)               
+github地址:https://github.com/microsoft/graphrag            
+官网地址:https://microsoft.github.io/graphrag/query/overview/                
+
 
 # 1、准备工作
 ## 1.1 graphrag基础概念
